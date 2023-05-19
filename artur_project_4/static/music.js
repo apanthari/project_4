@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+//load in the .csv data here
+=======
 // Fetch the CSV file
 fetch('song_data.csv')
   .then(response => response.text())
@@ -145,3 +148,4 @@ app.listen(3000, () => {
 //     resultsTable.appendChild(row);
 //   });
 // }
+>>>>>>> 318fdc874e1eb0e02dd7629a322f5d8348793a04
