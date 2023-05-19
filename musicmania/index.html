@@ -1,13 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Music store template</title>
+  <title>Musicmania</title>
+  <script src="music.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
 </head>
 <body>
-  <input type="file" id="uploadfile" accept=".csv">
-  <button > Upload Confirm</button>
+  <input type="text" id="searchInput" placeholder="Search...">
+  <table id="resultsTable">
+    <!-- Table rows will be dynamically added here -->
+  </table>
+  <!-- <input type="file" id="uploadfile" accept=".csv">
+  <button > Upload Confirm</button> -->
 <div id="outer">
   <div id="wrapper">
     <div id="header">
@@ -25,7 +30,8 @@
         <li id="m6"><a href="#">Contact</a></li>
       </ul>
       <div id="search">
-        <h2>Search Music Online</h2>
+        <h2>Search Music in Dataset</h2>
+        <script src="music.js"></script>
         <form action="#">
           <input type="text" class="text" name="q" value="" id="q" />
           <input type="submit" name="submit" value="Go &gt; &gt;" id="submit" class="submit" />
@@ -39,12 +45,12 @@
         
           <p>The Data Analysis includes the following:</p>
           <ul class="blank">
-            <li><a href="#">&gt; &nbsp; Top 10 Countdown</a></li>
-            <li><a href="#">&gt; &nbsp; New Releases</a></li>
-            <li><a href="#">&gt; &nbsp; Folk Collections</a></li>
-            <li><a href="#">&gt; &nbsp; Devotional</a></li>
+            <li><a href="#">&gt; &nbsp; Density Vs. Song Popularity</a></li>
+            <li><a href="#">&gt; &nbsp; Correlation Heat Map</Map></a></li>
+            <!-- <li><a href="#">&gt; &nbsp; Folk Collections</a></li>
+            <li><a href="#">&gt; &nbsp; Devotional</a></li> -->
           </ul>
-          <p>If you're having problems editing the template please don't hesitate to ask for help on the <a href="#">forum</a>.</p>
+          <p>If you're having problems finding a song please don't hesitate to search for music on the <a href="#">Search Music in Dataset</a>.</p>
         </div>
         <div id="body-right">
           <h2>Music Catagories</h2>
