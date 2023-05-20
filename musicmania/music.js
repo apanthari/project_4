@@ -1,28 +1,84 @@
-// Fetch the CSV file
+// Load the CSV file
 fetch('song_data.csv')
-  .then(response => response.text())
-  .then(csvData => {
-    // Convert CSV to JSON
-    const jsonData = csvToJSON(csvData);
-    
-    // Extract only the "song_name" column from the JSON data
-    const songNames = jsonData.map(row => row.song_name);
-    
-    // Display the song names
-    displaySearchResults(songNames);
-    
-    // Handle search input changes
-    const searchInput = document.getElementById('searchInput');
+.then(response => response.text())
+.then(csvData => {
+  // Parse the CSV data using Papa Parse
+  const parsedData = Papa.parse(csvData, { header: true }).data;
 
-    searchInput.addEventListener('input', function () {
-      const searchTerm = this.value.toLowerCase();
-      const filteredData = songNames.filter(name =>
-        name.toLowerCase().includes(searchTerm)
-      );
+  // Use the parsed data as needed
+  console.log(parsedData);
+  // You can access the CSV rows as an array of objects
 
-      displaySearchResults(filteredData);
-    });
+  // For example, to access the "title" column of the first row:
+  console.log(parsedData[0].title);
+
+  // You can also iterate over the parsed data
+  parsedData.forEach(row => {
+    // Access row data
+    console.log(row.title);
+    console.log(row.artist);
+    // ...
   });
+})
+.catch(error => {
+  console.error('Error loading or parsing CSV file:', error);
+})
+
+function handleSearch() {
+ // Get the search query from the input field
+ const query = searchInput.value.toLowerCase();
+
+ // Clear previous search results
+ const resultsTable = document.getElementById('resultsTable');
+ resultsTable.innerHTML = '';
+
+  // Iterate over the parsed CSV data and compare the search query
+  for (let i = 0; i < csvData.length; i++) {
+    const rowData = csvData[i];
+
+    // Perform search on desired fields or columns in the CSV
+    // Here, assume the CSV has a "title" column
+    if (rowData.title.toLowerCase().includes(query)) {
+      // Create a new table row for each matching result
+      const newRow = resultsTable.insertRow();
+
+      // Create table cells for each column in the CSV
+      const titleCell = newRow.insertCell();
+      titleCell.textContent = rowData.title;
+
+      // Repeat the above steps for other columns in the CSV
+      // ...
+
+      // Add more cells as needed based on your CSV structure
+    }
+  }
+};
+
+// // Fetch the CSV file
+// fetch('song_data.csv')
+//   .then(response => response.text())
+//   .then(csvData => {
+//     // Convert CSV to JSON
+//     const jsonData = csvToJSON(csvData);
+    
+//     // Extract only the "song_name" column from the JSON data
+//     const songNames = jsonData.map(row => row.song_name);
+    
+//     // Display the song names
+//     displaySearchResults(songNames);
+    
+//     // Handle search input changes
+//     const searchInput = document.getElementById('searchInput');
+
+//     searchInput.addEventListener('input', function () {
+//       const searchTerm = this.value.toLowerCase();
+//       const filteredData = songNames.filter(name =>
+//         name.toLowerCase().includes(searchTerm)
+//       );
+
+//       displaySearchResults(filteredData);
+//     });
+//   });
 
 
 // // Fetch the CSV file
