@@ -1,5 +1,3 @@
-
-
 from rec_using_knn import model_prediction
 
 
