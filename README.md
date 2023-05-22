@@ -12,9 +12,9 @@ After cleaning, understanding the dataset consisted of analysis of the popularit
 Then the correlation between feature variables was found using distribution maps and correlation matrices. 
 ![Correlation Heat Map](https://github.com/apanthari/project_4/assets/119544491/51a23c6b-2b98-4b6f-9abf-2e51d2fd2994)
 
-Normalizing the data using the MinMaxScaler was chosen to fit the feature variables within bounded intervals reflecting the bulk of the data and avoiding the unwanted focus on outliers.
+Normalizing the data using the MinMaxScaler was chosen to fit the feature variables within bounded intervals reflecting the bulk of the data and avoiding the focus on outliers.
 
-* K-Means and PCA
+### K-Means and PCA
 
 The K-means model revealed that optimal number of clusters is 3.
 
@@ -24,7 +24,7 @@ After initializing the standardized data with clusters = 3, PCA was used to fit 
 
 ![download](https://github.com/apanthari/project_4/assets/119544491/58bee173-9aad-416b-ade2-f3cf9cbe08e9)
 
-* K-Nearest Neighbors
+### K-Nearest Neighbors
 
 The k-nearest neighbors deemed the most telling algorithm during analysis. The normalized data frame was indexed by song name multiplied by the Compressed Sparse Row (CSR) matrix. The CRS matrix is commonly utilized for recommender systems due their efficient ability for row-vector assessment, because each row in this data set is a song and each column represents a feature about that song, CRS matrices can help break down the dense normalized matrix. Nearest Neighbors model fitting was then applied with brute-force algorithm for fast computation and cosine similarity metrics to calculate the minimum distances to determine similar songs. 
 
