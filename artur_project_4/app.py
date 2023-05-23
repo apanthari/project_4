@@ -2,7 +2,8 @@ from rec_using_knn import model_prediction
 
 
 # 1. import Flask
-from flask import Flask
+from flask import Flask, jsonify, render_template
+
 
 # 2. Create an app, being sure to pass __name__
 app = Flask(__name__)
@@ -11,14 +12,19 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-    print("Server received request for 'Home' page...", flush = True)
+    return render_template("index.html")
 
-    x = "song" # input from javascript
-    returned_songs = model_prediction(x)
+    # print("Server received request for 'Home' page...", flush = True)
 
-    return "Welcome to my 'Home' page!"
+    # x = "song" # input from javascript
+    # returned_songs = model_prediction(x)
 
+    # return "Welcome to my 'Home' page!"
+# example: /predict/let it go
 
+@app.route("/predict/<song>")
+def predict(song):
+    return jsonify(model_prediction(song))
 # # 4. Define what to do when a user hits the /about route
 # @app.route("/about")
 
