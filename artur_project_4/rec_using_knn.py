@@ -10,7 +10,12 @@ def model_prediction(songsearch):
     # temp.reset_index(inplace=True)
     # songsearch = 'Sex on Fire'
     songsearch = songsearch.lower()
-    song_index = temp.index[temp['song_name'] ==songsearch].tolist()[0]
+    song_index = temp.index[temp['song_name'] ==songsearch]
+    print(len(song_index))
+    if len(song_index)>0:
+        song_index = song_index.tolist()[0]
+    else:
+        return None
     print(song_index)
     # print(song_features.iloc[song_index,1:].values.reshape(1,-1))
 

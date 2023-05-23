@@ -1,7 +1,6 @@
-var song_name = handleSearch(user_query); 
-d3.json(`/predict/${song_name}`).then(data=>{
-  console.log(data);
-})
+var checkName = d3.select("#query");
+checkName.on("change", handleSearch);
+
 
 // Load the CSV file
 // fetch('song_data.csv')
@@ -29,11 +28,16 @@ d3.json(`/predict/${song_name}`).then(data=>{
 //   console.error('Error loading or parsing CSV file:', error);
 // })
 
-function handleSearch(user_query) {
+function handleSearch() {
   // Get the search query from the input field
   //  const query = searchInput.value.trim().toLowerCase();
-  const query = user_query.trim().toLowerCase();
-  return query
+  event.preventDefault();
+ var song_name = checkName.property("value"); 
+d3.json(`/predict/${song_name}`).then(data=>{
+  console.log(data);
+})
+  // const query = user_query.trim().toLowerCase();
+  // return query
 
   // Clear previous search results
   // const resultsTable = document.getElementById('resultsTable');
@@ -53,8 +57,8 @@ function handleSearch(user_query) {
 //     console.log(data); 
 
   }; 
-
-handleSearch('trouble every day'); 
+// 
+// handleSearch('trouble every day'); 
 
  
 
