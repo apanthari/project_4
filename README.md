@@ -1,6 +1,6 @@
 ## Overview
 
-Music is a large part of our culture and affects (and reflects) current cultural movements. Music has become an increasingly integral shared part of our global cultural experience. Spotify, one of the largest music platforms, has over 500 million users across the globe. Spotify is known for their strong ability to provide quality music suggestions based on users’ listening patterns. This is critical for customer satisfaction and retention as well as brand reputation for expansion. In this study we focused on developing music recommendations based on song data through the use of machine learning.
+Music is a large part of our culture and affects (and reflects) current cultural movements. Music has become an increasingly integral shared part of our global cultural experience. Spotify, one of the largest music platforms, has over 500 million users across the globe. Spotify is known for their strong ability to provide quality music suggestions based on users’ listening patterns. This is critical for customer satisfaction and retention as well as brand reputation for expansion. In this study we focused on developing music recommendations based on audio features through the use of machine learning.
 
 ## Data Processing and Modeling
 
