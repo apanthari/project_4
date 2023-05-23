@@ -28,35 +28,31 @@ checkName.on("change", handleSearch);
 //   console.error('Error loading or parsing CSV file:', error);
 // })
 
-function handleSearch() {
+function handleSearch(event) {
   // Get the search query from the input field
   //  const query = searchInput.value.trim().toLowerCase();
   event.preventDefault();
- var song_name = checkName.property("value"); 
-d3.json(`/predict/${song_name}`).then(data=>{
-  console.log(data);
-})
-  // const query = user_query.trim().toLowerCase();
-  // return query
+  var song_name = checkName.property("value"); 
+  d3.json(`/predict/${song_name}`).then(data=>{
+    console.log(data);
+    data.shift();
+    const bodyRight = document.getElementById("body-right");
+    let bodyRightInnerHtml = "<h2>Your music recs are: </h2>";
+    data.forEach(element => {
 
-  // Clear previous search results
-  // const resultsTable = document.getElementById('resultsTable');
-  // resultsTable.innerHTML = '';
-
-
-
-
-
-
-//   d3.csv('song_data.csv').then(data => {
-//     // //     searchInput.addEventListener('input', function () {
-// // //       const searchTerm = this.value.toLowerCase();
-// // //       const filteredData = songNames.filter(name =>
-// // //         name.toLowerCase().includes(searchTerm)
-// // //       );
-//     console.log(data); 
-
+    bodyRightInnerHtml += `<div class="box"> <img src="static/images/pic_2.jpg" width="130" height="86" alt="Pic 1" class="left" />
+    <p>Song Rec: ${element[2]} <br>${element[3]} ${element[4]} <br><a href="http://www.spotify.com">Spotify</a>.</p>
+    <div class="btns"> <a href="#"><span>Listen</span></a> <a href="#"><span>Add</span></a> </div>
+   <div class="clear"></div>
+   </div>`
+    });
+   bodyRight.innerHTML = bodyRightInnerHtml
+    });
   }; 
+
+
+
+
 // 
 // handleSearch('trouble every day'); 
 
@@ -209,5 +205,4 @@ d3.json(`/predict/${song_name}`).then(data=>{
 // //     }
 // //     resultsTable.appendChild(row);
 // //   });
-
 

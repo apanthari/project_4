@@ -10,7 +10,7 @@ img {
 	border: 0;
 }
 a {
-	color: #333;
+	color: #E7E4E4;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -32,7 +32,7 @@ a:hover {
 body {
 	text-align: center;
 	font: 12px arial, sans-serif;
-	background: #eee;
+	background: #E7E4E4;
 }
 #outer {
 	background: top center url(images/header_bg.jpg) repeat-x;
@@ -55,7 +55,7 @@ body {
 	margin: 0;
 }
 #header p {
-	color: #333333;
+	color: #E7E4E4;
 	padding: 0 0 10px 70px;
 	margin: 0;
 }
@@ -69,7 +69,7 @@ body {
 	text-decoration: none;
 }
 #nav a:hover {
-	color: #fff;
+	color: #333;
 	text-decoration: none;
 }
 #nav ul {
@@ -111,7 +111,7 @@ body {
 	background: #E7E4E4;
 }
 #search a {
-	color: #333;
+	color: #E7E4E4;
 	padding: 0 5px;
 }
 #search a:hover {

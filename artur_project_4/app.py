@@ -24,11 +24,13 @@ def home():
 
 @app.route("/predict/<song>")
 def predict(song):
+
     ret = model_prediction(song)
     if ret: 
         return jsonify(ret)
     else:
         return jsonify(["Not Found"])
+
 # # 4. Define what to do when a user hits the /about route
 # @app.route("/about")
 
