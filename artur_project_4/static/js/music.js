@@ -1,4 +1,4 @@
-var song_name = "let it be";
+var song_name = handleSearch(user_query); 
 d3.json(`/predict/${song_name}`).then(data=>{
   console.log(data);
 })
@@ -33,23 +33,28 @@ function handleSearch(user_query) {
   // Get the search query from the input field
   //  const query = searchInput.value.trim().toLowerCase();
   const query = user_query.trim().toLowerCase();
-  console.log(query);
+  return query
 
   // Clear previous search results
-  const resultsTable = document.getElementById('resultsTable');
-  resultsTable.innerHTML = '';
-
-  d3.csv('song_data.csv').then(data => {
-    // //     searchInput.addEventListener('input', function () {
-// //       const searchTerm = this.value.toLowerCase();
-// //       const filteredData = songNames.filter(name =>
-// //         name.toLowerCase().includes(searchTerm)
-// //       );
-    console.log(data); 
-
-  }); 
+  // const resultsTable = document.getElementById('resultsTable');
+  // resultsTable.innerHTML = '';
 
 
+
+
+
+
+//   d3.csv('song_data.csv').then(data => {
+//     // //     searchInput.addEventListener('input', function () {
+// // //       const searchTerm = this.value.toLowerCase();
+// // //       const filteredData = songNames.filter(name =>
+// // //         name.toLowerCase().includes(searchTerm)
+// // //       );
+//     console.log(data); 
+
+  }; 
+
+handleSearch('trouble every day'); 
 
  
 
@@ -200,5 +205,5 @@ function handleSearch(user_query) {
 // //     }
 // //     resultsTable.appendChild(row);
 // //   });
-}
+
 
